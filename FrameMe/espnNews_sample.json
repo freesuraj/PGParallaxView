@@ -1,0 +1,556 @@
+{
+  "timestamp": "2014-07-22T16:30:54Z",
+  "resultsOffset": 0,
+  "status": "success",
+  "resultsLimit": 2,
+  "resultsCount": 456,
+  "headlines": [
+    {
+      "headline": "Suns expect Eric Bledsoe to return",
+      "type": "HeadlineNews",
+      "shortLinkText": "Suns president expects PG Bledsoe to return ",
+      "related": [],
+      "inlines": [],
+      "id": 11246863,
+      "authors": [],
+      "story": "<p>The <a href=\"http://espn.go.com/nba/team/_/name/phx/phoenix-suns\">Phoenix Suns</a> remain confident that <a href=\"http://espn.go.com/nba/player/_/id/4238/eric-bledsoe\">Eric Bledsoe</a>, one of the most talented free agents remaining on the market, will re-sign with the team.</p>\n<p>Bledsoe and Phoenix are far apart on contract talks, sources close to the situation told ESPN's Chris Broussard last week. But Suns president of basketball operations Lon Babby said Monday that he expects the restricted free agent to stay with Phoenix.</p>\n<p><photo1></p>\n<p>\"We'll continue to work as hard as we can within that restricted free-agency system established by the collective bargaining agreement,\" Babby said, according to <a href=\"http://www.azcentral.com/story/sports/nba/suns/2014/07/22/suns-expect-eric-bledsoe-to-return/12977223/\" target=\"_blank\">The Arizona Republic</a>. \"We continue to hope and expect that he will remain in a Suns uniform.\"</p>\n<p>The Suns have offered Bledsoe a four-year, $48 million contract, but he wants a maximum five-year, $80 million deal, league sources told Broussard.</p>\n<p>The thought that the Suns will match any offer Bledsoe receives from a competing club has deterred teams from aggressively pursuing the 24-year-old point guard. Phoenix has thus far refused to discuss potential sign-and-trade opportunities.</p>\n<p>But the Suns' completion of a sign-and-trade deal for <a href=\"http://espn.go.com/nba/player/_/id/6472/isaiah-thomas\">Isaiah Thomas</a>&nbsp;and&nbsp;the drafting of point guard <a href=\"http://espn.go.com/nba/player/_/id/3059281/tyler-ennis\">Tyler Ennis</a>&nbsp;have potential suitors thinking that Phoenix may move on from Bledsoe, league sources said.</p>\n<p>As for Phoenix's potential backcourt logjam of Bledsoe, Thomas and <a href=\"http://espn.go.com/nba/player/_/id/3423/goran-dragic\">Goran Dragic</a>, coach Jeff Hornacek envisions the Suns having an advantage with what he called \"a three-headed monster\" at point guard.</p>\n<p>\"There's going to be two of those guys on the court at all times,\" Hornacek said Monday. \"When that happens, teams are going to really have to plan for that.\"</p>\n<p>Bledsoe averaged career highs of 17.7 points, 5.5 assists and 4.7 rebounds last season, his first with the Suns.</p>\n<p><i>ESPN The Magazine's Chris Broussard and The Associated Press contributed to this report.</i></p>\n\n\n\n\n",
+      "title": "Phoenix Suns expect Eric Bledsoe to return to team, president Lon Babby says",
+      "linkText": "Suns president expects PG Bledsoe to return",
+      "description": "The Phoenix Suns remain confident that Eric Bledsoe, one of the most talented free agents remaining on the market, will re-sign with the team.",
+      "published": "2014-07-22T15:07:16Z",
+      "video": [
+        {
+          "id": 11229985,
+          "headline": "Bledsoe And Suns Not Close To Deal",
+          "description": "Amin Elhassan and Ethan Strauss discuss Eric Bledsoe turning down a deal from the Suns.",
+          "premium": false,
+          "ad": {
+            "sport": "nba",
+            "bundle": "sportscenter"
+          },
+          "tracking": {
+            "sportName": "nba",
+            "leagueName": "No League",
+            "coverageType": "Analysis",
+            "trackingName": "*Unpub When Eric Bledsoe Signs COM_NBA Analysis (Elhaussen and Straus on Bledsoe) 2014/6/17 ODV"
+          },
+          "lastModified": "2014-07-18T16:35:24Z",
+          "originalPublishDate": "2014-07-18T00:06:22Z",
+          "timeRestrictions": {
+            "embargoDate": "2014-07-18T00:06:22Z",
+            "expirationDate": "2014-09-30T16:00:00Z"
+          },
+          "deviceRestrictions": {
+            "type": "whitelist",
+            "devices": [
+              "desktop",
+              "settop",
+              "handset"
+            ]
+          },
+          "syndicatable": true,
+          "duration": 168,
+          "categories": [
+            {
+              "description": "NBA",
+              "type": "league",
+              "sportId": 46,
+              "leagueId": 46,
+              "league": {
+                "id": 46,
+                "description": "NBA",
+                "links": {
+                  "api": {
+                    "leagues": {
+                      "href": "http://api-app.espn.com/v1/sports/basketball/nba"
+                    }
+                  },
+                  "web": {
+                    "leagues": {
+                      "href": "http://espn.go.com/nba/?ex_cid=null"
+                    }
+                  },
+                  "mobile": {
+                    "leagues": {
+                      "href": "http://m.espn.go.com/nba/?ex_cid=null"
+                    }
+                  }
+                }
+              },
+              "uid": "s:40~l:46"
+            },
+            {
+              "description": "Eric Bledsoe",
+              "type": "athlete",
+              "sportId": 46,
+              "athleteId": 4238,
+              "athlete": {
+                "id": 4238,
+                "description": "Eric Bledsoe",
+                "links": {
+                  "api": {
+                    "athletes": {
+                      "href": "http://api-app.espn.com/v1/sports/basketball/nba/athletes/4238"
+                    }
+                  },
+                  "web": {
+                    "athletes": {
+                      "href": "http://espn.go.com/nba/player/_/id/4238/eric-bledsoe?ex_cid=null"
+                    }
+                  },
+                  "mobile": {
+                    "athletes": {
+                      "href": "http://m.espn.go.com/nba/playercard?playerId=4238&ex_cid=null"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "description": "Phoenix Suns",
+              "type": "team",
+              "sportId": 46,
+              "teamId": 21,
+              "team": {
+                "id": 21,
+                "description": "Phoenix Suns",
+                "links": {
+                  "api": {
+                    "teams": {
+                      "href": "http://api-app.espn.com/v1/sports/basketball/nba/teams/21"
+                    }
+                  },
+                  "web": {
+                    "teams": {
+                      "href": "http://espn.go.com/nba/team/_/name/phx/phoenix-suns?ex_cid=null"
+                    }
+                  },
+                  "mobile": {
+                    "teams": {
+                      "href": "http://m.espn.go.com/nba/clubhouse?teamId=21&ex_cid=null"
+                    }
+                  }
+                }
+              },
+              "uid": "s:40~l:46~t:21"
+            }
+          ],
+          "keywords": [
+            "nba free agency"
+          ],
+          "posterImages": {
+            "default": {
+              "href": "http://media.video-cdn.espn.com/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe_default.jpg",
+              "width": 576,
+              "height": 324
+            },
+            "full": {
+              "href": "http://media.video-cdn.espn.com/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe.jpg"
+            }
+          },
+          "images": [
+            {
+              "name": "Poster Image",
+              "url": "http://media.video-cdn.espn.com/images/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe.jpg",
+              "alt": "",
+              "caption": "",
+              "credit": "",
+              "width": 576,
+              "height": 324
+            }
+          ],
+          "thumbnail": "http://a.espncdn.com/media/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe.jpg",
+          "links": {
+            "api": {
+              "self": {
+                "href": "http://api-app.espn.com/v1/video/clips/11229985"
+              }
+            },
+            "web": {
+              "href": "http://espn.go.com/video/clip?id=11229985&ex_cid=espnapi_internal",
+              "short": {
+                "href": "http://es.pn/1kASBzl"
+              },
+              "self": {
+                "href": "http://espn.go.com/video/clip?id=11229985&ex_cid=espnapi_internal"
+              }
+            },
+            "source": {
+              "mezzanine": {
+                "href": "http://vod.espn.go.com/espnvideo/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe.mp4"
+              },
+              "flash": {
+                "href": "http://vod.espn.go.com/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe.smil"
+              },
+              "HLS": {
+                "href": "http://vod.espn.go.com/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe.m3u8",
+                "HD": {
+                  "href": "http://media.video-cdn.espn.com/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe_nolbr.m3u8"
+                }
+              },
+              "HD": {
+                "href": "http://vod.espn.go.com/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe_720p30_2896k.mp4"
+              },
+              "full": {
+                "href": "http://vod.espn.go.com/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe_360p30_1464k.mp4"
+              },
+              "href": "http://vod.espn.go.com/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe_360p30_1464k.mp4"
+            },
+            "mobile": {
+              "href": "http://once.unicornmedia.com/now/od/auto/4d993388-8b49-4f34-9e48-87906e690281/85957be9-026a-415e-a8ce-7bfdc19d5e23/4f4a0a0e-ec3a-49c3-af22-2c7d622c7edb/content.once?UMADPARAMreferer=http://espn.go.com/video/clip?id=11229985",
+              "alert": {
+                "href": "http://m.espn.go.com/general/video/videoAlert?vid=11229985&ex_cid=espnapi_internal"
+              },
+              "source": {
+                "href": "http://vod.espn.go.com/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe.mp4"
+              },
+              "streaming": {
+                "href": "http://once.unicornmedia.com/now/od/auto/4d993388-8b49-4f34-9e48-87906e690281/85957be9-026a-415e-a8ce-7bfdc19d5e23/4f4a0a0e-ec3a-49c3-af22-2c7d622c7edb/content.once?UMADPARAMreferer=http://espn.go.com/video/clip?id=11229985"
+              },
+              "progressiveDownload": {
+                "href": "http://once.unicornmedia.com/now/od/auto/4d993388-8b49-4f34-9e48-87906e690281/85957be9-026a-415e-a8ce-7bfdc19d5e23/4f4a0a0e-ec3a-49c3-af22-2c7d622c7edb/content.once?UMADPARAMreferer=http://espn.go.com/video/clip?id=11229985"
+              }
+            }
+          },
+          "title": "Bledsoe And Suns Not Close To Deal"
+        }
+      ],
+      "keywords": [
+        "Lon Babby",
+        "NBA free agency",
+        "restricted free agent",
+        "RFA"
+      ],
+      "lastModified": "2014-07-22T16:24:47Z",
+      "premium": false,
+      "links": {
+        "api": {
+          "news": {
+            "href": "http://api-app.espn.com/v1/sports/news/11246863"
+          }
+        },
+        "web": {
+          "href": "http://espn.go.com/nba/story/_/id/11246863/phoenix-suns-expect-eric-bledsoe-return-team-president-lon-babby-says?ex_cid=null",
+          "short": {
+            "href": "http://es.pn/1o5r3H8"
+          }
+        },
+        "mobile": {
+          "href": "http://m.espn.go.com/nba/story?storyId=11246863&ex_cid=null"
+        }
+      },
+      "source": "ESPN.com news services",
+      "images": [
+        {
+          "height": 200,
+          "alt": "Eric Bledsoe",
+          "width": 300,
+          "name": "Bledsoe_Eric 140109 [300x200] - Copy",
+          "caption": "The Suns expect restricted free agent Eric Bledsoe, who is coming off a career season, to re-sign with the team.",
+          "type": "inline",
+          "credit": "Christian Petersen/Getty Images",
+          "url": "http://a.espncdn.com/photo/2014/0109/nba_g_bledsoe01jr_300x200.jpg"
+        },
+        {
+          "height": 324,
+          "alt": "",
+          "width": 576,
+          "name": "Bledsoe And Suns Not Close To Deal",
+          "caption": "Amin Elhassan and Ethan Strauss discuss Eric Bledsoe turning down a deal from the Suns.",
+          "url": "http://a.espncdn.com/media/motion/2014/0717/dm_140717_elhassanandstraussonbledsoe/dm_140717_elhassanandstraussonbledsoe.jpg"
+        },
+        {
+          "height": 324,
+          "alt": "Eric Bledsoe",
+          "width": 576,
+          "name": "Bledsoe_Eric 140109 [576x324]",
+          "type": "inline",
+          "credit": "Christian Petersen/Getty Images",
+          "url": "http://a.espncdn.com/photo/2014/0109/nba_g_bledsoe02jr_576x324.jpg"
+        }
+      ],
+      "categories": [
+        {
+          "description": "Phoenix Suns",
+          "type": "team",
+          "sportId": 46,
+          "teamId": 21,
+          "team": {
+            "id": 21,
+            "description": "Phoenix Suns",
+            "links": {
+              "api": {
+                "teams": {
+                  "href": "http://api-app.espn.com/v1/sports/basketball/nba/teams/21"
+                }
+              },
+              "web": {
+                "teams": {
+                  "href": "http://espn.go.com/nba/team/_/name/phx/phoenix-suns?ex_cid=null"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "http://m.espn.go.com/nba/clubhouse?teamId=21&ex_cid=null"
+                }
+              }
+            }
+          },
+          "uid": "s:40~l:46~t:21"
+        },
+        {
+          "description": "NBA",
+          "type": "league",
+          "sportId": 46,
+          "leagueId": 46,
+          "league": {
+            "id": 46,
+            "description": "NBA",
+            "links": {
+              "api": {
+                "leagues": {
+                  "href": "http://api-app.espn.com/v1/sports/basketball/nba"
+                }
+              },
+              "web": {
+                "leagues": {
+                  "href": "http://espn.go.com/nba/?ex_cid=null"
+                }
+              },
+              "mobile": {
+                "leagues": {
+                  "href": "http://m.espn.go.com/nba/?ex_cid=null"
+                }
+              }
+            }
+          },
+          "uid": "s:40~l:46"
+        },
+        {
+          "description": "Eric Bledsoe",
+          "type": "athlete",
+          "sportId": 46,
+          "athleteId": 4238,
+          "athlete": {
+            "id": 4238,
+            "description": "Eric Bledsoe",
+            "links": {
+              "api": {
+                "athletes": {
+                  "href": "http://api-app.espn.com/v1/sports/basketball/nba/athletes/4238"
+                }
+              },
+              "web": {
+                "athletes": {
+                  "href": "http://espn.go.com/nba/player/_/id/4238/eric-bledsoe?ex_cid=null"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "http://m.espn.go.com/nba/playercard?playerId=4238&ex_cid=null"
+                }
+              }
+            }
+          }
+        },
+        {
+          "description": "Isaiah Thomas",
+          "type": "athlete",
+          "sportId": 46,
+          "athleteId": 6472,
+          "athlete": {
+            "id": 6472,
+            "description": "Isaiah Thomas",
+            "links": {
+              "api": {
+                "athletes": {
+                  "href": "http://api-app.espn.com/v1/sports/basketball/nba/athletes/6472"
+                }
+              },
+              "web": {
+                "athletes": {
+                  "href": "http://espn.go.com/nba/player/_/id/6472/isaiah-thomas?ex_cid=null"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "http://m.espn.go.com/nba/playercard?playerId=6472&ex_cid=null"
+                }
+              }
+            }
+          }
+        },
+        {
+          "description": "Tyler Ennis",
+          "type": "athlete",
+          "sportId": 46,
+          "athleteId": 3059281,
+          "athlete": {
+            "id": 3059281,
+            "description": "Tyler Ennis",
+            "links": {
+              "api": {
+                "athletes": {
+                  "href": "http://api-app.espn.com/v1/sports/basketball/nba/athletes/3059281"
+                }
+              },
+              "web": {
+                "athletes": {
+                  "href": "http://espn.go.com/nba/player/_/id/3059281/tyler-ennis?ex_cid=null"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "http://m.espn.go.com/nba/playercard?playerId=3059281&ex_cid=null"
+                }
+              }
+            }
+          }
+        },
+        {
+          "description": "Goran Dragic",
+          "type": "athlete",
+          "sportId": 46,
+          "athleteId": 3423,
+          "athlete": {
+            "id": 3423,
+            "description": "Goran Dragic",
+            "links": {
+              "api": {
+                "athletes": {
+                  "href": "http://api-app.espn.com/v1/sports/basketball/nba/athletes/3423"
+                }
+              },
+              "web": {
+                "athletes": {
+                  "href": "http://espn.go.com/nba/player/_/id/3423/goran-dragic?ex_cid=null"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "http://m.espn.go.com/nba/playercard?playerId=3423&ex_cid=null"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "headline": "The best of what's left in FA",
+      "type": "Story",
+      "related": [],
+      "inlines": [],
+      "id": 11246209,
+      "authors": [
+        {
+          "firstName": "Amin",
+          "lastName": "Elhassan",
+          "displayName": "Amin Elhassan",
+          "shortName": "A. Elhassan",
+          "twitterUserName": "@AminESPN",
+          "biography": "<li>Video coordinator, college scout, Phoenix Suns\n<li>Assistant director of basketball operations, Phoenix Suns\n<li>MBA from Arizona State University ",
+          "images": [
+            {
+              "height": 90,
+              "width": 65,
+              "alt": "",
+              "name": "",
+              "credit": "",
+              "url": "http://a.espncdn.com/i/columnists/elhassan_amin_m.jpg"
+            }
+          ],
+          "links": {
+            "web": {
+              "href": "http://search.espn.go.com/amin-elhassan/"
+            }
+          }
+        }
+      ],
+      "story": "<p><photo1></p>\n<p>The dog days of free agency have arrived, when the words \"minimum contract\" and \"partial guarantee\" become ubiquitous. Summer league is over, and 26 out of the 30 names on the <a href=\"http://insider.espn.go.com/nba/story/_/id/11156333/nba-top-30-free-agents-2014-40\">Free Agent Big Board</a> have been snatched up; the number of landing spots for players seeking greater-than-minimum deals has shrunk considerably. Here's a look at the best talent still left on the market:</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/4260/greg-monroe\">Greg Monroe</a> | PF/C | RFA</h3>\n<strong>2013-14 team: <a href=\"http://espn.go.com/nba/team/_/name/det/detroit-pistons\">Detroit Pistons</a></strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4260.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>The confounding trio of Monroe's restricted free agency, his desire for a maximum allowable contract and the Pistons' crowded frontcourt have left him unsigned. He's a talented offensive weapon in the low post who can put it on the floor from the elbow area and attack, but he leaves something to be desired on the defensive end and really isn't a spacer. Is he good enough to be an offensive focal point on a winning team?</p>\n<p><offer></offer></p>\n<p>His agent, David Falk, says the answer is irrelevant, given the inherent cost of players at his position (PF/C) and the rich deals handed out to restricted free agents <a href=\"http://espn.go.com/nba/player/_/id/6466/chandler-parsons\">Chandler Parsons</a> and <a href=\"http://espn.go.com/nba/player/_/id/4249/gordon-hayward\">Gordon Hayward</a>. But the reason those players got the deals they did was because there was a belief that the offer sheets would hamstring their former teams. That's not the case for the Pistons. Lowering his max-contract demands in exchange for a shorter deal would probably help Monroe's cause and allow him to reap greater salary benefits down the line.</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/4238/eric-bledsoe\">Eric Bledsoe</a> | PG | RFA</h3>\n<strong>2013-14 team: <a href=\"http://espn.go.com/nba/team/_/name/phx/phoenix-suns\">Phoenix Suns</a></strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4238.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>Like Monroe, Bledsoe has an unfortunate triangle of circumstances that has stymied his free-agent market value. Unlike Monroe, Bledsoe might not be as able to take a short-term discount for his services. His agent, Rich Paul, is negotiating his first non-<a href=\"http://espn.go.com/nba/player/_/id/1966/lebron-james\">LeBron James</a> contract, and there might be pressure on Paul to prove his mettle as a deal-maker. Accepting a discount could send rival agents to aggressively pursue other players in Paul's stable, armed with the argument that Paul \"botched\" Bledsoe's surefire max deal. (Regardless of its validity, it's still damaging.) So Bledsoe's out might be to risk taking the qualifying offer for a year, then try his luck next summer as an unrestricted free agent.</p>\n<p>With the free-agent acquisition of <a href=\"http://espn.go.com/nba/player/_/id/6472/isaiah-thomas\">Isaiah Thomas</a> (not to mention the drafting of <a href=\"http://espn.go.com/nba/player/_/id/3059281/tyler-ennis\">Tyler Ennis</a>), it would seem that the Suns are preparing for that eventuality as well, despite their protestations to the contrary. By taking the qualifying offer, Bledsoe ensures himself a trade veto, which allows him some degree of say in where he can get moved.</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/510/shawn-marion\">Shawn Marion</a> | SF/PF | UFA</h3>\n<strong>2013-14 team: <a href=\"http://espn.go.com/nba/team/_/name/dal/dallas-mavericks\">Dallas Mavericks</a></strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/510.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>I'm a little surprised that Marion's free agency has gone the way it did; I thought some playoff-caliber team (think <a href=\"http://espn.go.com/nba/team/_/name/wsh/washington-wizards\">Washington Wizards</a> after losing <a href=\"http://espn.go.com/nba/player/_/id/2426/trevor-ariza\">Trevor Ariza</a>) would look to secure the veteran defensive ace for short-term money. Marion brings defensive versatility, active rebounding and decent (but not great) spacing, as well as a knack for garbage points around the rim off broken plays and offensive rebounds. His age (36) might have scared some suitors off, and he has never been known as one to make salary concessions.</p>\n\n\n<p>There are still some opportunities on the horizon: Despite renouncing him as a free agent (thus losing his Bird rights), the Mavericks continue to show interest in retaining him, and they have a need. Meanwhile, the Rockets still have their full midlevel available and could slide Marion in at power forward as a nice fit alongside <a href=\"http://espn.go.com/nba/player/_/id/2384/dwight-howard\">Dwight Howard</a>, not to mention as another huge defensive upgrade for a team that already took a step forward in that department with the acquisition of the aforementioned Ariza.</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/2178/mo-williams\">Mo Williams</a> | PG/SG | UFA</h3>\n<strong>2013-14 team: <a href=\"http://espn.go.com/nba/team/_/name/por/portland-trail-blazers\">Portland Trail Blazers</a></strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2178.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>Williams had a solid season with the Blazers, fitting in as a great complement to Portland's three-guard rotation with <a href=\"http://espn.go.com/nba/player/_/id/6606/damian-lillard\">Damian Lillard</a> and <a href=\"http://espn.go.com/nba/player/_/id/4032/wesley-matthews\">Wesley Matthews</a>. He opted out of his second year to capitalize on that, but unfortunately remains unsigned. Williams is the type of player most teams would love to have but not necessarily shell out a significant amount of money for -- an offensive spark plug who can't play distributor full time but can give you spells, not to mention a subpar defender. Ideally, he'll land in a role that's identical to the one he held in Portland, but it'll have to be in another city: the Blazers quickly replaced him by signing <a href=\"http://espn.go.com/nba/player/_/id/1994/steve-blake\">Steve Blake</a>.</p>\n<p>Teams that could use Williams include the Mavericks, who remain thin at point guard, and the <a href=\"http://espn.go.com/nba/team/_/name/mia/miami-heat\">Miami Heat</a>, who need to punch up their scoring if they plan on not burning <a href=\"http://espn.go.com/nba/player/_/id/1987/dwyane-wade\">Dwyane Wade</a> out by the All-Star break. The Mavs still have their room exception (worth $2.7 million), while the Heat can only offer the vet minimum.</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/4248/al-farouq-aminu\">Al-Farouq Aminu</a> | SF/PF | UFA</h3>\n<strong>2013-14 team: <a href=\"http://espn.go.com/nba/team/_/name/no/new-orleans-pelicans\">New Orleans Pelicans</a></strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4248.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>I wrote about Aminu as a <a href=\"http://insider.espn.go.com/nba/story/_/id/11172162/al-farouq-aminu-gustavo-ayon-top-best-value-deals-free-agency-nba\">possible value deal on the market</a> as a cheap defensive option who can play either forward position (think of him like a poor man's Marion). His offense leaves a lot to be desired -- he's a terrible 3-point shooter and doesn't really score outside of transition and scrap buckets. The bright side for Aminu at this point is a one-year deal with a team where he'll get to play (and be seen), and try to drum up his value for next summer.</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/2166/leandro-barbosa\">Leandro Barbosa</a> | PG/SG | UFA</h3>\n<strong>2013-14 team: Phoenix Suns</strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2166.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>Barbosa's myriad injuries the past two years have thrown cold water on his free-agency hopes, as teams simply don't know enough about his current level of ability. He'll try to change some minds later this summer at the FIBA World Cup, where he'll be competing for a strong Brazilian team. Unfortunately, most, if not all, of the free-agent money will have dried up by then. A one-year minimum deal is his best strategy at this point, preferably with a contending team, to show his worth as a contributor to a winner.</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/6436/jordan-hamilton\">Jordan Hamilton</a> | SG/SF | UFA</h3>\n<strong>2013-14 team: <a href=\"http://espn.go.com/nba/team/_/name/hou/houston-rockets\">Houston Rockets</a></strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6436.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>Hamilton has a knack for putting the ball in the hoop. I had the opportunity to watch him work out in Las Vegas, and his stroke looked as pure as ever. He's a negative on the defensive end, and he isn't the biggest \"attention to detail\" guy, but for cheap scoring and good size, he's worth a look somewhere.</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/2439/jameer-nelson\">Jameer Nelson</a> | PG/SG | UFA</h3>\n<strong>2013-14 team: <a href=\"http://espn.go.com/nba/team/_/name/orl/orlando-magic\">Orlando Magic</a></strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2439.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>The pint-sized floor general who has called only one NBA city as home in his 10-year career is still on the market. Nelson is the consummate pro, a good pick-and-roll guard, a solid 3-point shooter and a forceful, if not imaginative, team offense leader. Teams looking for a steady hand at point for vet minimum could do a lot worse.</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/6546/gustavo-ayon\">Gustavo Ayon</a> | PF/C | UFA</h3>\n<strong>2013-14 team: <a href=\"http://espn.go.com/nba/team/_/name/atl/atlanta-hawks\">Atlanta Hawks</a></strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6546.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>Another value deal listee! As with Barbosa, Ayon will try to have a strong showing at the FIBA World Cup in order to drum up interest. Worst-case scenario, he'll put on a strong audition for European clubs always interested in an offensive big.</p>\n\n\n<div align=\"center\">\n<hr style=\"width:50%\"></div>\n\n\n<h3><a href=\"http://espn.go.com/nba/player/_/id/2746/andray-blatche\">Andray Blatche</a> | PF | UFA</h3>\n<strong>2013-14 team: <a href=\"http://espn.go.com/nba/team/_/name/bkn/brooklyn-nets\">Brooklyn Nets</a></strong>\n<p><!--INLINE MUG--></p>\n<div class=\"mod-inline headshot floatright\">\n<div><img class=\"floatright\" height=\"90\" src=\"http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2746.png&w=65&h=90&scale=crop&background=0xcccccc&transparent=false\" width=\"65\"></div>\n<center></center>\n</div>\n<!--END INLINE MUG-->\n\n\n<p>Blatche was in a good place in Brooklyn, appreciated for his abilities and receiving steady minutes, especially after <a href=\"http://espn.go.com/nba/player/_/id/3448/brook-lopez\">Brook Lopez</a>'s injury. He decided to opt out of a deal that paid him more than minimum, and is feeling the brunt of that decision. Apparently his image rehab with the Nets hasn't resonated yet with the rest of the league. Consider it a $100,000 lesson learned (the difference in salary between the amount he opted out from and the veteran's minimum).</p>\n\n\n\n\n",
+      "title": "Greg Monroe among 10 free agents still seeking new home - NBA",
+      "byline": "Amin Elhassan",
+      "linkText": "Elhassan: The best of what's left in FA",
+      "description": "Amin Elhassan takes a look at the best unrestricted free agents left on the market.",
+      "published": "2014-07-22T12:58:54Z",
+      "video": [],
+      "keywords": [
+        "free agency",
+        "Greg Monroe",
+        "Eric Bledsoe",
+        "Shawn Marion",
+        "Mo Williams",
+        "Al-Farouq Aminu",
+        "Leandro Barbosa",
+        "Jordan Hamilton",
+        "Jameer Nelson",
+        "Gustavo Ayon",
+        "Andray Blatche",
+        "unrestricted free agent",
+        "restricted free agent"
+      ],
+      "lastModified": "2014-07-22T15:47:17Z",
+      "premium": true,
+      "secondaryDescription": "With summer league completed, here are 10 free agents still on the market",
+      "links": {
+        "api": {
+          "news": {
+            "href": "http://api-app.espn.com/v1/sports/news/11246209"
+          }
+        },
+        "web": {
+          "href": "http://insider.espn.go.com/nba/story/_/id/11246209/greg-monroe-10-free-agents-seeking-new-home-nba?ex_cid=null",
+          "short": {
+            "href": "http://es.pn/1o50gdU"
+          }
+        },
+        "mobile": {
+          "href": "http://m.espn.go.com/nba/story?storyId=11246209&ex_cid=null"
+        }
+      },
+      "source": "ESPN Insider",
+      "images": [
+        {
+          "height": 324,
+          "alt": "Greg Monroe",
+          "width": 576,
+          "name": "Monroe_Greg 140708 [576x324] - Copy",
+          "caption": "Can Greg Monroe find a new home for his offensive skill set?",
+          "type": "inline",
+          "credit": "Troy Taormina/USA TODAY Sports",
+          "url": "http://a.espncdn.com/photo/2014/0708/nba_u_monroe01jr_576x324.jpg"
+        }
+      ],
+      "categories": [
+        {
+          "description": "NBA",
+          "type": "league",
+          "sportId": 46,
+          "leagueId": 46,
+          "league": {
+            "id": 46,
+            "description": "NBA",
+            "links": {
+              "api": {
+                "leagues": {
+                  "href": "http://api-app.espn.com/v1/sports/basketball/nba"
+                }
+              },
+              "web": {
+                "leagues": {
+                  "href": "http://espn.go.com/nba/?ex_cid=null"
+                }
+              },
+              "mobile": {
+                "leagues": {
+                  "href": "http://m.espn.go.com/nba/?ex_cid=null"
+                }
+              }
+            }
+          },
+          "uid": "s:40~l:46"
+        }
+      ]
+    }
+  ]
+}

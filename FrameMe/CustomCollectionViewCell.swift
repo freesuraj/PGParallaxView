@@ -8,28 +8,52 @@
 
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell {
+class CustomCollectionViewCell: UICollectionViewCell, PGParallaxCellProtocol {
     
-    var parallaxImageView: UIImageView?
+    @IBOutlet weak var parallaxImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var webView: UIWebView!
+    
+    var parallaxEffectView: UIView {
+        return parallaxImageView!
+    }
     
     static var reuseIdentifier: String {
         return "CustomCollectionViewCell"
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        parallaxImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
-        parallaxImageView?.contentMode = .Center
-        contentView.addSubview(parallaxImageView!)
+    override func awakeFromNib() {
+        parallaxImageView.clipsToBounds = true
     }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        parallaxImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
+//        parallaxImageView?.contentMode = .Center
+//        contentView.addSubview(parallaxImageView!)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 
     
     override func layoutSubviews() {
         parallaxImageView?.clipsToBounds = true
-        parallaxImageView?.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: contentView.frame.height)
+//        parallaxImageView?.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: contentView.frame.height)
+    }
+    
+    func asyncLoadImageViewFromUrlString(urlString: String) {
+        guard let url = NSURL(string: urlString) else {
+            return
+        }
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            if let data = NSData(contentsOfURL: url) {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.parallaxImageView.image = UIImage(data: data)
+                })
+            }
+        })
     }
 }

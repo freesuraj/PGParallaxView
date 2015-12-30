@@ -8,42 +8,39 @@
 
 import UIKit
 
+// Protocol to which every cell must confor to for the parallax effect
+public protocol PGParallaxCellProtocol {
+    var parallaxEffectView: UIView { get }
+}
+
 // Protocol that feeds the necessary data for the parallax view
 public protocol PGParallaxDataSource {
     func numberOfRowsInParallaxView(view: PGParallaxView) -> Int
     func cellForIndexPath(indexPath: NSIndexPath, inParallaxView view: PGParallaxView) -> UICollectionViewCell
 }
 
-@objc public protocol PGParallaxDelegate {
-    optional func parallaView(view: PGParallaxView, didScrollToIndex: Int)
+public protocol PGParallaxDelegate {
+    func didScrollParallaxView(view: PGParallaxView, toIndex index: Int)
 }
 
 // PGParallaxView is a scrollable parallax view which was inspired by the Yahoo news parallax design
 public class PGParallaxView: UIView {
     
-    public enum PGParallaxScrollType: Int {
-        case Horizontal = 1
-        case Vertical = 2
-    }
-    
     private var parallaxCollectionView: UICollectionView?
     
-    private var parallaxScrollType: PGParallaxScrollType = .Horizontal
-    
     public private(set) var currentIndex: Int = 0
-    public var separatorWidth: CGFloat = 5 // a dark separator separating two pages of the parallax view
+    public var pageSeparatorWidth: CGFloat = 1.0
     public var datasource: PGParallaxDataSource?
-    
+    public var delegate: PGParallaxDelegate?
     
     // Initialization
-    public convenience init(frame: CGRect, scrollType: PGParallaxScrollType) {
-        self.init(frame: frame)
-        parallaxScrollType = scrollType
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
         
         let layout = PGParallaxCollectionViewLayout()
-        layout.separatorWidth = separatorWidth
+        layout.separatorWidth = pageSeparatorWidth
         var collectionViewFrame = frame
-        collectionViewFrame.size.width += separatorWidth
+        collectionViewFrame.size.width += pageSeparatorWidth
         let collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -53,10 +50,22 @@ public class PGParallaxView: UIView {
         
         self.addSubview(parallaxCollectionView!)
     }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+    }
     
     // MARK : Public Methods
     public func registerClass(cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) {
         parallaxCollectionView?.registerClass(cellClass, forCellWithReuseIdentifier: identifier)
+    }
+    
+    public func registerNib(nib: UINib?, forCellWithReuseIdentifier identifier: String) {
+        parallaxCollectionView?.registerNib(nib, forCellWithReuseIdentifier: identifier)
     }
     
     public func dequeueReusableCellWithReuseIdentifier(identifier: String, forIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -69,7 +78,7 @@ public class PGParallaxView: UIView {
 }
 
 extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
-     public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
@@ -84,13 +93,46 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
         guard let parallaxDatasource = datasource else {
             return UICollectionViewCell()
         }
+        print("will load cell at index \(indexPath.row)")
         return parallaxDatasource.cellForIndexPath(indexPath, inParallaxView: self)
     }
     
+    public func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        print("will display cell at index \(indexPath.row)")
+    }
+    
+    public func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        currentIndex = Int(collectionView.contentOffset.x/(self.frame.width + pageSeparatorWidth))
+        if let parallaxDelegate = delegate, let dataCount = self.datasource?.numberOfRowsInParallaxView(self) where currentIndex < dataCount {
+            parallaxDelegate.didScrollParallaxView(self, toIndex: currentIndex)
+        }
+    }
+    
     public func scrollViewDidScroll(scrollView: UIScrollView) {
-        print("TODO: parallax effect when parallax view scrolls")
-        currentIndex = Int(scrollView.contentOffset.x/(self.frame.width + separatorWidth))
+        currentIndex = Int(scrollView.contentOffset.x/(scrollView.frame.width + pageSeparatorWidth))
         
+        let movedMargin = fmod(scrollView.contentOffset.x + scrollView.frame.width + pageSeparatorWidth, scrollView.frame.width + pageSeparatorWidth)
+        let widthMargin = fmod(fabs(scrollView.contentOffset.x + pageSeparatorWidth ),scrollView.frame.width + pageSeparatorWidth)
+        
+        let leftViewMargin = scrollView.contentOffset.x > 0 ? movedMargin : 0.0
+        let leftViewWidth = scrollView.frame.width + pageSeparatorWidth - widthMargin
+        let rightViewMargin = CGFloat(0.0)
+        let rightViewWidth = leftViewMargin - pageSeparatorWidth
+        
+        if let leftView = self.parallaxCollectionView?.cellForItemAtIndexPath(NSIndexPath(forItem: currentIndex, inSection: 0)) as? PGParallaxCellProtocol {
+            var leftViewFrame = leftView.parallaxEffectView.frame
+            leftViewFrame.origin.x = leftViewMargin
+            leftViewFrame.size.width = leftViewWidth
+            leftView.parallaxEffectView.frame = leftViewFrame
+        }
+        if let dataCount = self.datasource?.numberOfRowsInParallaxView(self) where currentIndex < dataCount - 1{
+            if let rightView = self.parallaxCollectionView?.cellForItemAtIndexPath(NSIndexPath(forItem: currentIndex + 1, inSection: 0)) as? PGParallaxCellProtocol {
+                var righViewFrame = rightView.parallaxEffectView.frame
+                righViewFrame.origin.x = rightViewMargin
+                righViewFrame.size.width = rightViewWidth
+                rightView.parallaxEffectView.frame = righViewFrame
+            }
+        }
     }
 }
 

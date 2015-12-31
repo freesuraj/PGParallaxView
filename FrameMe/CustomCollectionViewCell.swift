@@ -28,8 +28,7 @@ class CustomCollectionViewCell: UICollectionViewCell, PGParallaxCellProtocol {
     }
     
     override func layoutSubviews() {
-        parallaxImageView?.clipsToBounds = true
-//        parallaxImageView?.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: contentView.frame.height)
+        parallaxImageView.clipsToBounds = true
     }
     
     func asyncLoadImageViewFromUrlString(urlString: String) {

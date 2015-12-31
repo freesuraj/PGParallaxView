@@ -203,11 +203,9 @@ internal struct PGViewCache: CustomDebugStringConvertible {
     
     mutating func cacheView(view: UIView, atIndexPath indexPath: NSIndexPath) {
         if let _ = cache.objectForKey(indexPath.stringKey) {
-            print("already cached at \(indexPath.stringKey)")
             return
         }
         cache.setObject(view, forKey: indexPath.stringKey)
-        print("cached view at \(indexPath.stringKey)")
     }
     
     mutating func removeCachedViewAtIndexPath(atIndexPath indexPath: NSIndexPath) {

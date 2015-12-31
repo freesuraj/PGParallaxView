@@ -16,7 +16,7 @@ public protocol PGParallaxCellProtocol {
 // Protocol that feeds the necessary data for the parallax view
 public protocol PGParallaxDataSource {
     func numberOfRowsInParallaxView(view: PGParallaxView) -> Int
-    func cellForIndexPath(indexPath: NSIndexPath, inParallaxView view: PGParallaxView) -> UICollectionViewCell
+    func viewForIndexPath(indexPath: NSIndexPath, inParallaxView view: PGParallaxView) -> UIView
 }
 
 public protocol PGParallaxDelegate {
@@ -47,6 +47,7 @@ public class PGParallaxView: UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.pagingEnabled = true
+        collectionView.registerClass(PGParallaxCollectionViewCell.self, forCellWithReuseIdentifier: PGParallaxCollectionViewCell.reuseIdentifier)
         
         parallaxCollectionView = collectionView
         
@@ -59,22 +60,6 @@ public class PGParallaxView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-    }
-    
-    // MARK : Public Methods
-    public func registerClass(cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) {
-        parallaxCollectionView?.registerClass(cellClass, forCellWithReuseIdentifier: identifier)
-    }
-    
-    public func registerNib(nib: UINib?, forCellWithReuseIdentifier identifier: String) {
-        parallaxCollectionView?.registerNib(nib, forCellWithReuseIdentifier: identifier)
-    }
-    
-    public func dequeueReusableCellWithReuseIdentifier(identifier: String, forIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        guard let collectionView = parallaxCollectionView else {
-            return UICollectionViewCell()
-        }
-        return collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath)
     }
 }
 
@@ -91,27 +76,24 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        guard let parallaxDatasource = datasource else {
+        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PGParallaxCollectionViewCell.reuseIdentifier, forIndexPath: indexPath) as? PGParallaxCollectionViewCell else {
             return UICollectionViewCell()
         }
-        guard let cachedCell = cellCache.cachedView(atIndexPath: indexPath) as? UICollectionViewCell else {
-            return parallaxDatasource.cellForIndexPath(indexPath, inParallaxView: self)
+        
+        guard let parallaxDatasource = datasource else {
+            return cell
         }
-        return cachedCell
-    }
-    
-    private func cacheCellAroundIndexPath(cell: UICollectionViewCell, indexPath: NSIndexPath) {
-        cellCache.cacheView(cell, atIndexPath: indexPath)
-        if let parallaxDataSource = datasource {
-            if(indexPath.row > 0) {
-                let previousIndexPath = NSIndexPath(forItem: indexPath.row - 1, inSection: indexPath.section)
-                cellCache.cacheView(parallaxDataSource.cellForIndexPath(previousIndexPath, inParallaxView: self), atIndexPath: previousIndexPath)
-            }
-            if(indexPath.row < parallaxDataSource.numberOfRowsInParallaxView(self) - 1) {
-                let nextIndexPath = NSIndexPath(forItem: indexPath.row + 1, inSection: indexPath.section)
-                cellCache.cacheView(parallaxDataSource.cellForIndexPath(nextIndexPath, inParallaxView: self), atIndexPath: nextIndexPath)
-            }
+        
+        guard let cachedCell = cellCache.cachedView(atIndexPath: indexPath) else {
+            print("cell NOT found at cache \(indexPath.stringKey)")
+            let view = parallaxDatasource.viewForIndexPath(indexPath, inParallaxView: self)
+            cell.setParallaxView(view)
+            return cell
         }
+        cell.setParallaxView(cachedCell)
+        print("cell FOUND at cache \(indexPath.stringKey)")
+        
+        return cell
     }
     
     public func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
@@ -150,6 +132,70 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
                 rightView.parallaxEffectView.frame = righViewFrame
             }
         }
+    }
+}
+
+extension PGParallaxView {
+    private func cacheCellAroundIndexPath(cell: UICollectionViewCell, indexPath: NSIndexPath) {
+        guard let parallaxCell = cell as? PGParallaxCollectionViewCell,
+        let cachableView = parallaxCell.parallaxView else {
+            return
+        }
+        cellCache.cacheView(cachableView, atIndexPath: indexPath)
+        
+        if let parallaxDataSource = datasource {
+            if(indexPath.row > 0) {
+                let previousIndexPath = NSIndexPath(forItem: indexPath.row - 1, inSection: indexPath.section)
+                cellCache.cacheView(parallaxDataSource.viewForIndexPath(previousIndexPath, inParallaxView: self), atIndexPath: previousIndexPath)
+            }
+            if(indexPath.row < parallaxDataSource.numberOfRowsInParallaxView(self) - 1) {
+                let nextIndexPath = NSIndexPath(forItem: indexPath.row + 1, inSection: indexPath.section)
+                cellCache.cacheView(parallaxDataSource.viewForIndexPath(nextIndexPath, inParallaxView: self), atIndexPath: nextIndexPath)
+            }
+        }
+    }
+}
+
+private class PGParallaxCollectionViewCell: UICollectionViewCell, PGParallaxCellProtocol {
+    
+    private var parallaxView: UIView?
+    
+    var parallaxEffectView: UIView {
+        guard let inputParallaxView = parallaxView as? PGParallaxCellProtocol else {
+            return parallaxView!
+        }
+        return inputParallaxView.parallaxEffectView
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.contentView.backgroundColor = UIColor.redColor()
+    }
+    
+    convenience init(frame: CGRect, parallaxView: UIView) {
+        self.init(frame: frame)
+        self.parallaxView = parallaxView
+        self.contentView.addSubview(parallaxView)
+    }
+    
+    func setParallaxView(view: UIView) {
+        if let oldParallaxView = parallaxView {
+            oldParallaxView.removeFromSuperview()
+        }
+        parallaxView = view
+        self.contentView.addSubview(parallaxView!)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
+    static var reuseIdentifier: String {
+        return "PGParallaxCollectionViewCell"
     }
 }
 
@@ -197,7 +243,7 @@ private class PGParallaxCollectionViewLayout: UICollectionViewLayout {
     }
 }
 
-internal struct PGViewCache: CustomDebugStringConvertible {
+internal struct PGViewCache: CustomStringConvertible {
     
     private var cache: NSCache = NSCache()
     
@@ -216,8 +262,8 @@ internal struct PGViewCache: CustomDebugStringConvertible {
         return cache.objectForKey(indexPath.stringKey) as? UIView
     }
     
-    var debugDescription: String {
-        return "PGViewCache-debug"
+    var description: String {
+        return "PGViewCache- \(cache.name)"
     }
 }
 

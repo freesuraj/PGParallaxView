@@ -33,7 +33,6 @@ class ViewController: UIViewController, PGParallaxDataSource, PGParallaxDelegate
     
     func cellForIndexPath(indexPath: NSIndexPath, inParallaxView view: PGParallaxView) -> UICollectionViewCell {
         if let cell = view.dequeueReusableCellWithReuseIdentifier(CustomCollectionViewCell.reuseIdentifier, forIndexPath: indexPath) as? CustomCollectionViewCell {
-//            cell.parallaxImageView?.image = UIImage(named: "\(indexPath.row).jpg")
             cell.titleLabel.text = newsHeadlines[indexPath.row].title
             cell.webView.loadHTMLString(newsHeadlines[indexPath.row].story, baseURL: nil)
             cell.asyncLoadImageViewFromUrlString(newsHeadlines[indexPath.row].imageUrlString)

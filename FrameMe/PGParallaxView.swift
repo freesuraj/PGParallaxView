@@ -33,6 +33,8 @@ public class PGParallaxView: UIView {
     public var datasource: PGParallaxDataSource?
     public var delegate: PGParallaxDelegate?
     
+    private var cellCache: PGViewCache = PGViewCache()
+    
     // Initialization
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -74,7 +76,6 @@ public class PGParallaxView: UIView {
         }
         return collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath)
     }
-
 }
 
 extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -93,19 +94,35 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
         guard let parallaxDatasource = datasource else {
             return UICollectionViewCell()
         }
-        print("will load cell at index \(indexPath.row)")
-        return parallaxDatasource.cellForIndexPath(indexPath, inParallaxView: self)
+        guard let cachedCell = cellCache.cachedView(atIndexPath: indexPath) as? UICollectionViewCell else {
+            return parallaxDatasource.cellForIndexPath(indexPath, inParallaxView: self)
+        }
+        return cachedCell
+    }
+    
+    private func cacheCellAroundIndexPath(cell: UICollectionViewCell, indexPath: NSIndexPath) {
+        cellCache.cacheView(cell, atIndexPath: indexPath)
+        if let parallaxDataSource = datasource {
+            if(indexPath.row > 0) {
+                let previousIndexPath = NSIndexPath(forItem: indexPath.row - 1, inSection: indexPath.section)
+                cellCache.cacheView(parallaxDataSource.cellForIndexPath(previousIndexPath, inParallaxView: self), atIndexPath: previousIndexPath)
+            }
+            if(indexPath.row < parallaxDataSource.numberOfRowsInParallaxView(self) - 1) {
+                let nextIndexPath = NSIndexPath(forItem: indexPath.row + 1, inSection: indexPath.section)
+                cellCache.cacheView(parallaxDataSource.cellForIndexPath(nextIndexPath, inParallaxView: self), atIndexPath: nextIndexPath)
+            }
+        }
     }
     
     public func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        print("will display cell at index \(indexPath.row)")
-    }
-    
-    public func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         currentIndex = Int(collectionView.contentOffset.x/(self.frame.width + pageSeparatorWidth))
         if let parallaxDelegate = delegate, let dataCount = self.datasource?.numberOfRowsInParallaxView(self) where currentIndex < dataCount {
             parallaxDelegate.didScrollParallaxView(self, toIndex: currentIndex)
         }
+        cacheCellAroundIndexPath(cell, indexPath: indexPath)
+    }
+    
+    public func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
     }
     
     public func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -177,5 +194,37 @@ private class PGParallaxCollectionViewLayout: UICollectionViewLayout {
             attributes.append(self.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: i, inSection: 0))!)
         }
         return attributes
+    }
+}
+
+internal struct PGViewCache: CustomDebugStringConvertible {
+    
+    private var cache: NSCache = NSCache()
+    
+    mutating func cacheView(view: UIView, atIndexPath indexPath: NSIndexPath) {
+        if let _ = cache.objectForKey(indexPath.stringKey) {
+            print("already cached at \(indexPath.stringKey)")
+            return
+        }
+        cache.setObject(view, forKey: indexPath.stringKey)
+        print("cached view at \(indexPath.stringKey)")
+    }
+    
+    mutating func removeCachedViewAtIndexPath(atIndexPath indexPath: NSIndexPath) {
+        cache.removeObjectForKey(indexPath.stringKey)
+    }
+    
+    func cachedView(atIndexPath indexPath: NSIndexPath) -> UIView? {
+        return cache.objectForKey(indexPath.stringKey) as? UIView
+    }
+    
+    var debugDescription: String {
+        return "PGViewCache-debug"
+    }
+}
+
+extension NSIndexPath {
+    private var stringKey: String {
+        return String("\(self.section)-\(self.row)")
     }
 }

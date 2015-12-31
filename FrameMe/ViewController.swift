@@ -15,7 +15,6 @@ class ViewController: UIViewController, PGParallaxDataSource, PGParallaxDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         let parallaxView = PGParallaxView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        parallaxView.registerNib(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCollectionViewCell.reuseIdentifier)
         parallaxView.datasource = self
         parallaxView.delegate = self
         self.view.addSubview(parallaxView)
@@ -31,8 +30,9 @@ class ViewController: UIViewController, PGParallaxDataSource, PGParallaxDelegate
         return newsHeadlines.count
     }
     
-    func cellForIndexPath(indexPath: NSIndexPath, inParallaxView view: PGParallaxView) -> UICollectionViewCell {
-        if let cell = view.dequeueReusableCellWithReuseIdentifier(CustomCollectionViewCell.reuseIdentifier, forIndexPath: indexPath) as? CustomCollectionViewCell {
+    func viewForIndexPath(indexPath: NSIndexPath, inParallaxView view: PGParallaxView) -> UIView {
+        if let cell = NSBundle.mainBundle().loadNibNamed("CustomCollectionViewCell", owner: nil, options: nil)[0] as? CustomCollectionViewCell {
+            cell.frame = view.frame
             cell.titleLabel.text = newsHeadlines[indexPath.row].title
             cell.webView.loadHTMLString(newsHeadlines[indexPath.row].story, baseURL: nil)
             cell.asyncLoadImageViewFromUrlString(newsHeadlines[indexPath.row].imageUrlString)

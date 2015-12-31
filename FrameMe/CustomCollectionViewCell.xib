@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -21,7 +21,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBn-Nl-M4I">
-                        <rect key="frame" x="0.0" y="200" width="400" height="34"/>
+                        <rect key="frame" x="10" y="200" width="380" height="34"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="6vM-F2-aon"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="IoY-IH-hcD"/>
@@ -36,7 +36,7 @@
                         </variation>
                     </label>
                     <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-iE-zyy">
-                        <rect key="frame" x="0.0" y="243" width="400" height="549"/>
+                        <rect key="frame" x="10" y="243" width="380" height="549"/>
                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                     </webView>
                 </subviews>
@@ -44,7 +44,7 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="JBn-Nl-M4I" firstAttribute="leading" secondItem="vAo-Xa-hkh" secondAttribute="leading" id="B5s-5t-DzL"/>
+                <constraint firstItem="JBn-Nl-M4I" firstAttribute="leading" secondItem="vAo-Xa-hkh" secondAttribute="leading" constant="10" id="B5s-5t-DzL"/>
                 <constraint firstItem="8d6-iE-zyy" firstAttribute="leading" secondItem="JBn-Nl-M4I" secondAttribute="leading" id="DOa-HX-Wm0"/>
                 <constraint firstItem="vAo-Xa-hkh" firstAttribute="top" secondItem="m4B-1p-DtW" secondAttribute="top" id="MQ4-rG-rsi"/>
                 <constraint firstItem="vAo-Xa-hkh" firstAttribute="leading" secondItem="m4B-1p-DtW" secondAttribute="leading" id="QNB-Co-Tpv"/>
@@ -52,7 +52,7 @@
                 <constraint firstItem="JBn-Nl-M4I" firstAttribute="top" secondItem="vAo-Xa-hkh" secondAttribute="bottom" constant="7" id="dVM-vW-dW5"/>
                 <constraint firstItem="8d6-iE-zyy" firstAttribute="top" secondItem="JBn-Nl-M4I" secondAttribute="bottom" constant="9" id="il6-8Q-ph3"/>
                 <constraint firstAttribute="bottom" secondItem="8d6-iE-zyy" secondAttribute="bottom" constant="8" id="kjs-6L-78o"/>
-                <constraint firstItem="JBn-Nl-M4I" firstAttribute="trailing" secondItem="vAo-Xa-hkh" secondAttribute="trailing" id="kzM-nB-Cok"/>
+                <constraint firstItem="JBn-Nl-M4I" firstAttribute="trailing" secondItem="vAo-Xa-hkh" secondAttribute="trailing" constant="-10" id="kzM-nB-Cok"/>
                 <constraint firstItem="8d6-iE-zyy" firstAttribute="bottom" secondItem="vAo-Xa-hkh" secondAttribute="bottom" id="uoE-cs-OwL"/>
                 <constraint firstAttribute="trailing" secondItem="vAo-Xa-hkh" secondAttribute="trailing" id="wvb-IT-Fnk"/>
             </constraints>

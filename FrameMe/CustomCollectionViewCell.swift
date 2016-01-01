@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell, PGParallaxCellProtocol {
+class CustomCollectionViewCell: UICollectionViewCell, PGParallaxEffectProtocol {
     
     @IBOutlet weak var parallaxImageView: UIImageView!
     

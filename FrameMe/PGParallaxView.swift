@@ -109,10 +109,6 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     public func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        currentIndex = Int(collectionView.contentOffset.x/(self.frame.width + pageSeparatorWidth))
-        if let parallaxDelegate = delegate, let dataCount = self.datasource?.numberOfRowsInParallaxView(self) where currentIndex < dataCount {
-            parallaxDelegate.didScrollParallaxView(self, toIndex: currentIndex)
-        }
         cacheCellAroundIndexPath(cell, indexPath: indexPath)
     }
     
@@ -143,6 +139,13 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
                 righViewFrame.size.width = rightViewWidth
                 rightView.parallaxEffectView.frame = righViewFrame
             }
+        }
+    }
+    
+    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        currentIndex = Int(scrollView.contentOffset.x/(self.frame.width + pageSeparatorWidth))
+        if let parallaxDelegate = delegate, let dataCount = self.datasource?.numberOfRowsInParallaxView(self) where currentIndex < dataCount {
+            parallaxDelegate.didScrollParallaxView(self, toIndex: currentIndex)
         }
     }
 }

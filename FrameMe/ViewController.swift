@@ -43,7 +43,7 @@ class ViewController: UIViewController, PGParallaxDataSource, PGParallaxDelegate
     
     // MARK: PGParallaxDelegate
     func didScrollParallaxView(view: PGParallaxView, toIndex index: Int) {
-//        print("parallax view scrolled to index \(index)")
+        print("parallax view scrolled to index \(index)")
     }
 
 

@@ -29,7 +29,7 @@ import UIKit
     func viewForIndexPath(indexPath: NSIndexPath, inParallaxView view: PGParallaxView) -> UIView
 }
 
-public protocol PGParallaxDelegate {
+@objc public protocol PGParallaxDelegate {
     func didScrollParallaxView(view: PGParallaxView, toIndex index: Int)
 }
 

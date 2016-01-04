@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lWB-36-9uu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FrameMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FrameMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,6 +22,144 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="169" y="228"/>
+        </scene>
+        <!--Sticky Header View Controller-->
+        <scene sceneID="Sek-Pc-J2r">
+            <objects>
+                <viewController storyboardIdentifier="StickyHeaderViewController" id="1WT-dQ-W44" customClass="StickyHeaderViewController" customModule="FrameMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r8y-rS-KDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="10i-oG-jx7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TBa-WK-mIr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="km9-Wg-n7g">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9ma-xh-BuA" customClass="PGParallaxHeaderFlowLayout" customModule="FrameMe" customModuleProvider="target">
+                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="headerReferenceSize" width="50" height="202"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="HSr-4S-2P8">
+                                        <rect key="frame" x="10" y="212" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCell" id="5E5-OY-B2N">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="202"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Vk1-nQ-Rau">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="202"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car of the Year 2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rg-lT-1er">
+                                            <rect key="frame" x="0.0" y="65" width="600" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="aGH-L8-Ebx"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.22745098173618317" green="0.32549020648002625" blue="0.58039218187332153" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Vk1-nQ-Rau" secondAttribute="trailing" constant="-8" id="AYi-eZ-ZU4"/>
+                                        <constraint firstItem="0rg-lT-1er" firstAttribute="centerY" secondItem="5E5-OY-B2N" secondAttribute="centerY" id="CKA-x5-GiU"/>
+                                        <constraint firstItem="0rg-lT-1er" firstAttribute="leading" secondItem="5E5-OY-B2N" secondAttribute="leadingMargin" constant="-8" id="Igz-AO-LfB"/>
+                                        <constraint firstItem="Vk1-nQ-Rau" firstAttribute="top" secondItem="5E5-OY-B2N" secondAttribute="topMargin" constant="-8" id="Jzg-4H-zQc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Vk1-nQ-Rau" secondAttribute="bottom" constant="-8" id="Wen-6g-z2w"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0rg-lT-1er" secondAttribute="trailing" constant="-8" id="b4H-Vc-Zha"/>
+                                        <constraint firstItem="0rg-lT-1er" firstAttribute="centerX" secondItem="5E5-OY-B2N" secondAttribute="centerX" id="lmI-Sg-SvW"/>
+                                        <constraint firstItem="Vk1-nQ-Rau" firstAttribute="leading" secondItem="5E5-OY-B2N" secondAttribute="leadingMargin" constant="-8" id="vEW-rk-06r"/>
+                                    </constraints>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="1WT-dQ-W44" id="Xm1-Ix-WVV"/>
+                                    <outlet property="delegate" destination="1WT-dQ-W44" id="20a-6r-apg"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="10i-oG-jx7" firstAttribute="top" secondItem="km9-Wg-n7g" secondAttribute="bottom" id="AYm-PJ-xAP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="km9-Wg-n7g" secondAttribute="trailing" constant="-20" id="ZgY-57-9Zv"/>
+                            <constraint firstItem="km9-Wg-n7g" firstAttribute="leading" secondItem="TBa-WK-mIr" secondAttribute="leadingMargin" constant="-20" id="qW9-3E-f0i"/>
+                            <constraint firstItem="km9-Wg-n7g" firstAttribute="top" secondItem="r8y-rS-KDJ" secondAttribute="bottom" constant="-20" id="yCL-lp-eUx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="km9-Wg-n7g" id="JVs-Zh-y9z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TOL-z4-WAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814" y="203"/>
+        </scene>
+        <!--Sticky Header Table View Controller-->
+        <scene sceneID="wID-PN-Prr">
+            <objects>
+                <tableViewController storyboardIdentifier="StickyHeaderTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lWB-36-9uu" customClass="StickyHeaderTableViewController" customModule="FrameMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="p8n-Lb-9bP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="K3o-Pn-JQK" customClass="PGParallaxTableViewHeader" customModule="FrameMe" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="203"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="PRM-bl-1db">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="203"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car of the decade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVc-kZ-lEl">
+                                    <rect key="frame" x="0.0" y="78.5" width="600" height="46"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="46" id="Fp5-GM-ska"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="PRM-bl-1db" firstAttribute="leading" secondItem="K3o-Pn-JQK" secondAttribute="leading" id="I0l-2U-R0T"/>
+                                <constraint firstItem="HVc-kZ-lEl" firstAttribute="leading" secondItem="K3o-Pn-JQK" secondAttribute="leading" id="Ihz-eR-c7j"/>
+                                <constraint firstAttribute="trailing" secondItem="PRM-bl-1db" secondAttribute="trailing" id="OjB-5Q-R21"/>
+                                <constraint firstItem="PRM-bl-1db" firstAttribute="top" secondItem="K3o-Pn-JQK" secondAttribute="top" id="VHX-sl-OUP"/>
+                                <constraint firstAttribute="trailing" secondItem="HVc-kZ-lEl" secondAttribute="trailing" id="c71-b8-agR"/>
+                                <constraint firstItem="HVc-kZ-lEl" firstAttribute="centerX" secondItem="K3o-Pn-JQK" secondAttribute="centerX" id="dnp-yZ-9xH"/>
+                                <constraint firstItem="HVc-kZ-lEl" firstAttribute="centerY" secondItem="K3o-Pn-JQK" secondAttribute="centerY" id="pkW-xk-jxH"/>
+                                <constraint firstAttribute="bottom" secondItem="PRM-bl-1db" secondAttribute="bottom" id="x8s-HG-FhL"/>
+                            </constraints>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="lWB-36-9uu" id="VdF-t6-Ocz"/>
+                            <outlet property="delegate" destination="lWB-36-9uu" id="nqP-zE-YGp"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="parallaxHeader" destination="K3o-Pn-JQK" id="3mE-e8-Shd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aeU-NA-der" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1436" y="203"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="car.jpg" width="880" height="550"/>
+    </resources>
 </document>

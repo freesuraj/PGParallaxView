@@ -8,14 +8,24 @@
 
 import UIKit
 
-// Protocol to which every cell must confor to for the parallax effect
-public protocol PGParallaxCellProtocol {
+/**
+ View which wants the parallax effect on a part of the view (like an UIImageView at the top) should conform to this protocol and set such view via parallaxEffectView. If the view does not implement this protocol, whole view will be used for parallax effect.
+*/
+public protocol PGParallaxEffectProtocol {
     var parallaxEffectView: UIView { get }
 }
 
-// Protocol that feeds the necessary data for the parallax view
+/**
+ Protocol that feeds the necessary data for the parallax view
+*/
 public protocol PGParallaxDataSource {
+    /**
+     Number of Scrollable Cells in the parallax view
+     */
     func numberOfRowsInParallaxView(view: PGParallaxView) -> Int
+    /**
+     Reusable views to be passed to the parallax view.
+     */
     func viewForIndexPath(indexPath: NSIndexPath, inParallaxView view: PGParallaxView) -> UIView
 }
 
@@ -23,7 +33,9 @@ public protocol PGParallaxDelegate {
     func didScrollParallaxView(view: PGParallaxView, toIndex index: Int)
 }
 
-// PGParallaxView is a scrollable parallax view which was inspired by the Yahoo news parallax design
+/**
+ PGParallaxView is a scrollable parallax view which was inspired by the Yahoo news parallax design
+*/
 public class PGParallaxView: UIView {
     
     private var parallaxCollectionView: UICollectionView?
@@ -97,10 +109,6 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     public func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        currentIndex = Int(collectionView.contentOffset.x/(self.frame.width + pageSeparatorWidth))
-        if let parallaxDelegate = delegate, let dataCount = self.datasource?.numberOfRowsInParallaxView(self) where currentIndex < dataCount {
-            parallaxDelegate.didScrollParallaxView(self, toIndex: currentIndex)
-        }
         cacheCellAroundIndexPath(cell, indexPath: indexPath)
     }
     
@@ -118,14 +126,14 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
         let rightViewMargin = CGFloat(0.0)
         let rightViewWidth = leftViewMargin - pageSeparatorWidth
         
-        if let leftView = self.parallaxCollectionView?.cellForItemAtIndexPath(NSIndexPath(forItem: currentIndex, inSection: 0)) as? PGParallaxCellProtocol {
+        if let leftView = self.parallaxCollectionView?.cellForItemAtIndexPath(NSIndexPath(forItem: currentIndex, inSection: 0)) as? PGParallaxEffectProtocol {
             var leftViewFrame = leftView.parallaxEffectView.frame
             leftViewFrame.origin.x = leftViewMargin
             leftViewFrame.size.width = leftViewWidth
             leftView.parallaxEffectView.frame = leftViewFrame
         }
         if let dataCount = self.datasource?.numberOfRowsInParallaxView(self) where currentIndex < dataCount - 1{
-            if let rightView = self.parallaxCollectionView?.cellForItemAtIndexPath(NSIndexPath(forItem: currentIndex + 1, inSection: 0)) as? PGParallaxCellProtocol {
+            if let rightView = self.parallaxCollectionView?.cellForItemAtIndexPath(NSIndexPath(forItem: currentIndex + 1, inSection: 0)) as? PGParallaxEffectProtocol {
                 var righViewFrame = rightView.parallaxEffectView.frame
                 righViewFrame.origin.x = rightViewMargin
                 righViewFrame.size.width = rightViewWidth
@@ -133,15 +141,21 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
             }
         }
     }
+    
+    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        currentIndex = Int(scrollView.contentOffset.x/(self.frame.width + pageSeparatorWidth))
+        if let parallaxDelegate = delegate, let dataCount = self.datasource?.numberOfRowsInParallaxView(self) where currentIndex < dataCount {
+            parallaxDelegate.didScrollParallaxView(self, toIndex: currentIndex)
+        }
+    }
 }
 
 extension PGParallaxView {
     private func cacheCellAroundIndexPath(cell: UICollectionViewCell, indexPath: NSIndexPath) {
-        guard let parallaxCell = cell as? PGParallaxCollectionViewCell,
-        let cachableView = parallaxCell.parallaxView else {
+        guard let parallaxCell = cell as? PGParallaxCollectionViewCell else {
             return
         }
-        cellCache.cacheView(cachableView, atIndexPath: indexPath)
+        cellCache.cacheView(parallaxCell.parallaxView, atIndexPath: indexPath)
         
         if let parallaxDataSource = datasource {
             if(indexPath.row > 0) {
@@ -156,13 +170,13 @@ extension PGParallaxView {
     }
 }
 
-private class PGParallaxCollectionViewCell: UICollectionViewCell, PGParallaxCellProtocol {
+private class PGParallaxCollectionViewCell: UICollectionViewCell, PGParallaxEffectProtocol {
     
-    private var parallaxView: UIView?
+    private var parallaxView: UIView = UIView()
     
     var parallaxEffectView: UIView {
-        guard let inputParallaxView = parallaxView as? PGParallaxCellProtocol else {
-            return parallaxView!
+        guard let inputParallaxView = parallaxView as? PGParallaxEffectProtocol else {
+            return parallaxView
         }
         return inputParallaxView.parallaxEffectView
     }
@@ -179,11 +193,9 @@ private class PGParallaxCollectionViewCell: UICollectionViewCell, PGParallaxCell
     }
     
     func setParallaxView(view: UIView) {
-        if let oldParallaxView = parallaxView {
-            oldParallaxView.removeFromSuperview()
-        }
+        parallaxView.removeFromSuperview()
         parallaxView = view
-        self.contentView.addSubview(parallaxView!)
+        self.contentView.addSubview(parallaxView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -243,7 +255,7 @@ private class PGParallaxCollectionViewLayout: UICollectionViewLayout {
     }
 }
 
-internal struct PGViewCache: CustomStringConvertible {
+private struct PGViewCache: CustomStringConvertible {
     
     private var cache: NSCache = NSCache()
     

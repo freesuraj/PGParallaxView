@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
   s.authors = { 'Suraj Pathak' => 'freesuraj@gmail.com' }
   s.source = { :git => 'https://github.com/freesuraj/PGParallaxView.git', :tag => s.version }
 
-  s.platform = ios, '8.0'
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Pod/Classes/*.swift'

@@ -13,12 +13,12 @@
 		ED7DE7CD1C31456E00EEAAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7DE7CC1C31456E00EEAAFB /* Assets.xcassets */; };
 		ED7DE7D01C31456E00EEAAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7DE7CE1C31456E00EEAAFB /* LaunchScreen.storyboard */; };
 		ED7DE7DA1C3145AC00EEAAFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7DE7D91C3145AC00EEAAFB /* CoreGraphics.framework */; };
-		ED7DE7E01C32595500EEAAFB /* PGParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DE7DF1C32595500EEAAFB /* PGParallaxView.swift */; };
 		ED7DE7E31C327D5600EEAAFB /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DE7E21C327D5600EEAAFB /* CustomCollectionViewCell.swift */; };
 		ED7DE7F01C33D83C00EEAAFB /* espnNews_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = ED7DE7EF1C33D83C00EEAAFB /* espnNews_sample.json */; };
 		ED7DE7F21C33D8AE00EEAAFB /* NewsFeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DE7F11C33D8AE00EEAAFB /* NewsFeeder.swift */; };
 		ED7DE7F41C33DFC700EEAAFB /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7DE7F31C33DFC700EEAAFB /* CustomCollectionViewCell.xib */; };
-		EDFBA34C1C357E3D00C9CA56 /* PGParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA34B1C357E3D00C9CA56 /* PGParallaxHeader.swift */; };
+		ED7DE81E1C3A29FF00EEAAFB /* PGParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DE81C1C3A29FF00EEAAFB /* PGParallaxHeader.swift */; };
+		ED7DE81F1C3A29FF00EEAAFB /* PGParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DE81D1C3A29FF00EEAAFB /* PGParallaxView.swift */; };
 		EDFBA34E1C3596A000C9CA56 /* StickyHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA34D1C3596A000C9CA56 /* StickyHeaderViewController.swift */; };
 		EDFBA3501C35988100C9CA56 /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDFBA34F1C35988100C9CA56 /* car.jpg */; };
 		EDFBA36A1C36D76A00C9CA56 /* StickyHeaderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA3691C36D76A00C9CA56 /* StickyHeaderTableViewController.swift */; };
@@ -33,12 +33,12 @@
 		ED7DE7CF1C31456E00EEAAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED7DE7D11C31456E00EEAAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7DE7D91C3145AC00EEAAFB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		ED7DE7DF1C32595500EEAAFB /* PGParallaxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGParallaxView.swift; sourceTree = "<group>"; };
 		ED7DE7E21C327D5600EEAAFB /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED7DE7EF1C33D83C00EEAAFB /* espnNews_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = espnNews_sample.json; sourceTree = "<group>"; };
 		ED7DE7F11C33D8AE00EEAAFB /* NewsFeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeeder.swift; sourceTree = "<group>"; };
 		ED7DE7F31C33DFC700EEAAFB /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
-		EDFBA34B1C357E3D00C9CA56 /* PGParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGParallaxHeader.swift; sourceTree = "<group>"; };
+		ED7DE81C1C3A29FF00EEAAFB /* PGParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGParallaxHeader.swift; path = Pod/Classes/PGParallaxHeader.swift; sourceTree = SOURCE_ROOT; };
+		ED7DE81D1C3A29FF00EEAAFB /* PGParallaxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGParallaxView.swift; path = Pod/Classes/PGParallaxView.swift; sourceTree = SOURCE_ROOT; };
 		EDFBA34D1C3596A000C9CA56 /* StickyHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeaderViewController.swift; sourceTree = "<group>"; };
 		EDFBA34F1C35988100C9CA56 /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = car.jpg; sourceTree = "<group>"; };
 		EDFBA3691C36D76A00C9CA56 /* StickyHeaderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeaderTableViewController.swift; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 		ED7DE7DE1C32592300EEAAFB /* PGParallaxView */ = {
 			isa = PBXGroup;
 			children = (
-				ED7DE7DF1C32595500EEAAFB /* PGParallaxView.swift */,
-				EDFBA34B1C357E3D00C9CA56 /* PGParallaxHeader.swift */,
+				ED7DE81C1C3A29FF00EEAAFB /* PGParallaxHeader.swift */,
+				ED7DE81D1C3A29FF00EEAAFB /* PGParallaxView.swift */,
 			);
 			name = PGParallaxView;
 			sourceTree = "<group>";
@@ -186,13 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7DE7C81C31456E00EEAAFB /* ViewController.swift in Sources */,
-				ED7DE7E01C32595500EEAAFB /* PGParallaxView.swift in Sources */,
-				EDFBA34C1C357E3D00C9CA56 /* PGParallaxHeader.swift in Sources */,
 				ED7DE7C61C31456E00EEAAFB /* AppDelegate.swift in Sources */,
 				EDFBA36A1C36D76A00C9CA56 /* StickyHeaderTableViewController.swift in Sources */,
 				ED7DE7E31C327D5600EEAAFB /* CustomCollectionViewCell.swift in Sources */,
 				EDFBA34E1C3596A000C9CA56 /* StickyHeaderViewController.swift in Sources */,
 				ED7DE7F21C33D8AE00EEAAFB /* NewsFeeder.swift in Sources */,
+				ED7DE81F1C3A29FF00EEAAFB /* PGParallaxView.swift in Sources */,
+				ED7DE81E1C3A29FF00EEAAFB /* PGParallaxHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

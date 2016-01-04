@@ -97,13 +97,11 @@ extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         
         guard let cachedCell = cellCache.cachedView(atIndexPath: indexPath) else {
-            print("cell NOT found at cache \(indexPath.stringKey)")
             let view = parallaxDatasource.viewForIndexPath(indexPath, inParallaxView: self)
             cell.setParallaxView(view)
             return cell
         }
         cell.setParallaxView(cachedCell)
-        print("cell FOUND at cache \(indexPath.stringKey)")
         
         return cell
     }

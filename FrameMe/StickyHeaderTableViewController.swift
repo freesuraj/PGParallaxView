@@ -16,6 +16,10 @@ class StickyHeaderTableViewController: UITableViewController {
         super.viewDidLoad()
         
         parallaxHeader = tableView.tableHeaderView as! PGParallaxTableViewHeader
+        var rect = parallaxHeader.frame
+        rect.size.height = 100.0
+        parallaxHeader.frame = rect
+        
         tableView.tableHeaderView = nil
         tableView.addSubview(parallaxHeader)
         
@@ -32,6 +36,10 @@ class StickyHeaderTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 
     // MARK: - Table view data source

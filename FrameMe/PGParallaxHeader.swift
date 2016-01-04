@@ -47,10 +47,12 @@ class PGParallaxHeaderFlowLayout: UICollectionViewFlowLayout {
     }
 }
 
-class PGParallaxTableViewHeader: UIView {
+class PGParallaxTableViewHeader: UIView, UIScrollViewDelegate {
     
     var tableView: UITableView?
     var referenceHeight: CGFloat?
+    
+    let parallaxDeltaFactor: CGFloat = 0.5
     
     func updateHeaderView() {
         guard let tableView = self.tableView,
@@ -58,12 +60,18 @@ class PGParallaxTableViewHeader: UIView {
             return
         }
         let offset = tableView.contentOffset
-        var headerRect = CGRect(x: 0, y: -referenceHeight, width: tableView.bounds.width, height: referenceHeight)
+        var headerRect = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: referenceHeight)
         
         if offset.y < 0 {
-            headerRect.size.height = -tableView.contentOffset.y
-            headerRect.origin.y = tableView.contentOffset.y
+            let delta = fabs(min(0.0, tableView.contentOffset.y))
+            headerRect.size.height += delta
+            headerRect.origin.y -= delta
             self.frame = headerRect
+            self.clipsToBounds = false
+        } else if offset.y > 0 {
+            headerRect.origin.y = max(tableView.contentOffset.y * parallaxDeltaFactor, 0)
+            self.frame = headerRect
+            self.clipsToBounds = true
         }
     
     }

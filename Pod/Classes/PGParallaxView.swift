@@ -11,14 +11,14 @@ import UIKit
 /**
  View which wants the parallax effect on a part of the view (like an UIImageView at the top) should conform to this protocol and set such view via parallaxEffectView. If the view does not implement this protocol, whole view will be used for parallax effect.
 */
-public protocol PGParallaxEffectProtocol {
+@objc public protocol PGParallaxEffectProtocol {
     var parallaxEffectView: UIView { get }
 }
 
 /**
  Protocol that feeds the necessary data for the parallax view
 */
-public protocol PGParallaxDataSource {
+@objc public protocol PGParallaxDataSource {
     /**
      Number of Scrollable Cells in the parallax view
      */
@@ -174,7 +174,7 @@ private class PGParallaxCollectionViewCell: UICollectionViewCell, PGParallaxEffe
     
     private var parallaxView: UIView = UIView()
     
-    var parallaxEffectView: UIView {
+    @objc var parallaxEffectView: UIView {
         guard let inputParallaxView = parallaxView as? PGParallaxEffectProtocol else {
             return parallaxView
         }

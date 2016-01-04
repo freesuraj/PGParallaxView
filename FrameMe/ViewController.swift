@@ -11,13 +11,23 @@ import UIKit
 class ViewController: UIViewController, PGParallaxDataSource, PGParallaxDelegate {
     
     let newsHeadlines = NewsFeeder.loadHeadlines()
-
+    var parallaxView: PGParallaxView = PGParallaxView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let parallaxView = PGParallaxView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        parallaxView = PGParallaxView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         parallaxView.datasource = self
         parallaxView.delegate = self
         self.view.addSubview(parallaxView)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.performSelector("delaySet", withObject: nil, afterDelay: 2.0)
+    }
+    
+    func delaySet() {
+        parallaxView.setIndex(4, animated: true)
+
     }
 
     override func didReceiveMemoryWarning() {

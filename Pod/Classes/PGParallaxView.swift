@@ -73,6 +73,25 @@ public class PGParallaxView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
     }
+    
+    /**
+     Moves the parallax view to the given index
+     */
+    public func setIndex(index: Int, animated: Bool) {
+        guard index != currentIndex else {
+            return
+        }
+        currentIndex = index
+        self.layoutIfNeeded()
+        guard let collectionView = self.parallaxCollectionView,
+        let dataSource = self.datasource where index < dataSource.numberOfRowsInParallaxView(self) else {
+            return
+        }
+        var rect = collectionView.frame
+        rect.origin.x = CGFloat(index) * collectionView.frame.size.width
+        self.parallaxCollectionView?.scrollRectToVisible(rect, animated: animated)
+        
+    }
 }
 
 extension PGParallaxView: UICollectionViewDataSource, UICollectionViewDelegate {
